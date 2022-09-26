@@ -12,14 +12,9 @@ pipeline {
 		}
 		stage('Build Docker Image'){
 			steps{
-				sh 'docker build -t hainamdev/demo .'
-			}
-		}
-		stage('Push DockerHub'){
-			steps{
-				withDockerRegistry(credentialsId: 'dockerpwd', url: 'https://index.docker.io/v1/') {
-				   sh 'docker push hainamdev/demo'
-				}
+					script {
+					    sh 'docker build -t hainadev/demo . '
+					}
 			}
 		}
 	}
