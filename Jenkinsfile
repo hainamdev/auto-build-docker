@@ -1,18 +1,5 @@
 pipeline {
 	agent any
-<<<<<<< HEAD
-	tool {
-		maven 'maven3'
-	}
-	stages {
-		stage('SCM Checkout'){
-			steps{
-				echo "hello world"
-			}
-		}
-	}
-}
-=======
 	tools {
 		maven 'maven3'
 	}
@@ -37,4 +24,3 @@ pipeline {
 		}
 	}
 }
->>>>>>> 5bc9295f5b576d391e3dbdf54d978320f9314ac4
