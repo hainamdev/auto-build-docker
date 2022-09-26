@@ -4,9 +4,10 @@ pipeline {
 		maven 'maven3'
 	}
 	stages {
-		stage('SCM Checkout'){
+		stage('Build Maven'){
 			steps{
-				echo "hello world"
+				checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/hainamdev/auto-build-docker']]])
+				sh 'mvn clean install'
 			}
 		}
 	}
