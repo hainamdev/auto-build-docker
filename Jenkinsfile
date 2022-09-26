@@ -13,7 +13,7 @@ pipeline {
 		stage('Build Docker Image'){
 			steps{
 					script {
-					    sh 'docker build -t hainadev/demo . '
+					    sh 'docker build -t hainamdev/demo . '
 					}
 			}
 		}
