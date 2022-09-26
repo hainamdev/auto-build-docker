@@ -12,9 +12,7 @@ pipeline {
 		}
 		stage('Build Docker Image'){
 			steps{
-				withDockerRegistry(credentialsId: 'dockerpwd', url: 'https://index.docker.io/v1/') {
-				   sh 'docker build -t hainamdev/auto-buid-push-docker:1.0.0 .'
-				}
+				sh 'docker build -t hainamdev/auto-buid-push-docker:1.0.0 .'
 			}
 		}
 		stage('Push DockerHub'){
